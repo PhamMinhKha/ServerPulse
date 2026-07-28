@@ -1,23 +1,31 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Theo doi NAS / VPS</title>
+    <title>ServerPulse | NAS / VPS Monitor</title>
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
     <main class="app-shell">
       <section class="hero">
-        <p class="eyebrow">Realtime Server Monitor</p>
-        <h1>Theo doi tinh trang NAS hoac VPS</h1>
-        <p class="hero-copy">
-          Giam sat CPU, RAM va luong mang download/upload theo thoi gian thuc ngay tren may chu.
-        </p>
+        <div class="topline">
+          <p class="eyebrow" data-i18n="eyebrow">Realtime Server Monitor</p>
+          <div class="language-switch" aria-label="Language selector">
+            <button type="button" class="language-button active" data-language="en">EN</button>
+            <button type="button" class="language-button" data-language="vi">VI</button>
+          </div>
+        </div>
+        <h1 data-i18n="title">Monitor your NAS or VPS in real time</h1>
+        <p class="hero-copy" data-i18n="subtitle">Track CPU, RAM, download/upload throughput, and disk usage in one place.</p>
         <div class="hero-meta">
-          <span id="hostname">Dang tai...</span>
-          <span id="platform">Dang tai...</span>
-          <span id="updatedAt">Chua co du lieu</span>
+          <span id="hostname">Loading...</span>
+          <span id="platform">Loading...</span>
+          <span id="updatedAt" data-i18n="noData">No data yet</span>
+        </div>
+        <div class="api-link-panel">
+          <span>API</span>
+          <a id="apiLink" href="/api/metrics" target="_blank" rel="noreferrer">/api/metrics</a>
         </div>
       </section>
 
@@ -29,7 +37,7 @@
           </div>
           <div class="metric-value" id="cpuUsage">0%</div>
           <div class="progress-track"><div class="progress-bar" id="cpuBar"></div></div>
-          <p class="metric-detail" id="cpuModel">Dang tai thong tin CPU...</p>
+          <p class="metric-detail" id="cpuModel" data-i18n="loadingCpu">Loading CPU information...</p>
         </article>
 
         <article class="metric-card accent-ram">
@@ -39,7 +47,7 @@
           </div>
           <div class="metric-value" id="ramUsage">0 GB / 0 GB</div>
           <div class="progress-track"><div class="progress-bar" id="ramBar"></div></div>
-          <p class="metric-detail">Bo nho dang su dung tren he thong</p>
+          <p class="metric-detail" data-i18n="ramDetail">Current system memory usage</p>
         </article>
 
         <article class="metric-card accent-download">
@@ -48,7 +56,7 @@
             <span>RX</span>
           </div>
           <div class="metric-value" id="downloadSpeed">0 Mbps</div>
-          <p class="metric-detail" id="downloadTotal">Tong nhan: 0 B</p>
+          <p class="metric-detail" id="downloadTotal">Total received: 0 B</p>
         </article>
 
         <article class="metric-card accent-upload">
@@ -57,32 +65,32 @@
             <span>TX</span>
           </div>
           <div class="metric-value" id="uploadSpeed">0 Mbps</div>
-          <p class="metric-detail" id="uploadTotal">Tong gui: 0 B</p>
+          <p class="metric-detail" id="uploadTotal">Total sent: 0 B</p>
         </article>
       </section>
 
       <section class="storage-panel">
         <div class="storage-header">
-          <h2>Dung luong o cung</h2>
-          <p>Theo doi tung phan vung hoac mount point tren NAS/VPS</p>
+          <h2 data-i18n="diskUsage">Disk usage</h2>
+          <p data-i18n="diskSubtitle">Monitor each partition or mount point on your NAS or VPS</p>
         </div>
         <div id="diskList" class="disk-list">
-          <p class="metric-detail">Dang tai thong tin o cung...</p>
+          <p class="metric-detail" data-i18n="loadingDisk">Loading disk information...</p>
         </div>
       </section>
 
       <section class="footer-panel">
         <div>
-          <h3>Trang thai ket noi</h3>
-          <p id="interfaces">Dang tai giao dien mang...</p>
+          <h3 data-i18n="networkInterfaces">Network interfaces</h3>
+          <p id="interfaces" data-i18n="loadingInterfaces">Loading network interfaces...</p>
         </div>
         <div>
-          <h3>Chu ky cap nhat</h3>
-          <p>Moi 2 giay</p>
+          <h3 data-i18n="refreshInterval">Refresh interval</h3>
+          <p data-i18n="refreshValue">Every 2 seconds</p>
         </div>
         <div>
-          <h3>Uptime</h3>
-          <p id="uptime">Dang tai...</p>
+          <h3 data-i18n="uptime">Uptime</h3>
+          <p id="uptime" data-i18n="loading">Loading...</p>
         </div>
       </section>
     </main>

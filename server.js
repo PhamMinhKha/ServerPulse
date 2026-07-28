@@ -11,6 +11,10 @@ function bytesToMbps(bytesPerSecond) {
   return (bytesPerSecond * 8) / 1_000_000;
 }
 
+function bytesToRoundedMegabytesPerSecond(bytesPerSecond) {
+  return Math.round(bytesPerSecond / 1_000_000);
+}
+
 function formatBytes(bytes) {
   const units = ["B", "KB", "MB", "GB", "TB"];
   let value = bytes;
@@ -62,10 +66,14 @@ async function getNetworkStats() {
     download: {
       bytesPerSecond: downloadBytesPerSecond,
       mbps: bytesToMbps(downloadBytesPerSecond),
+      megabytesPerSecond: bytesToRoundedMegabytesPerSecond(downloadBytesPerSecond),
+      formatted: `${bytesToRoundedMegabytesPerSecond(downloadBytesPerSecond)} MB/s`,
     },
     upload: {
       bytesPerSecond: uploadBytesPerSecond,
       mbps: bytesToMbps(uploadBytesPerSecond),
+      megabytesPerSecond: bytesToRoundedMegabytesPerSecond(uploadBytesPerSecond),
+      formatted: `${bytesToRoundedMegabytesPerSecond(uploadBytesPerSecond)} MB/s`,
     },
     totalDownloaded: totals.rxBytes,
     totalUploaded: totals.txBytes,
