@@ -1,0 +1,16 @@
+{
+  "name": "serverpulse",
+  "version": "1.0.0",
+  "description": "Ung dung theo doi tinh trang may chu NAS hoac VPS",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "systeminformation": "^5.33.1"
+  }
+}

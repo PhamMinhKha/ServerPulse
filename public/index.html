@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theo doi NAS / VPS</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero">
+        <p class="eyebrow">Realtime Server Monitor</p>
+        <h1>Theo doi tinh trang NAS hoac VPS</h1>
+        <p class="hero-copy">
+          Giam sat CPU, RAM va luong mang download/upload theo thoi gian thuc ngay tren may chu.
+        </p>
+        <div class="hero-meta">
+          <span id="hostname">Dang tai...</span>
+          <span id="platform">Dang tai...</span>
+          <span id="updatedAt">Chua co du lieu</span>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="metric-card accent-cpu">
+          <div class="card-header">
+            <h2>CPU</h2>
+            <span id="cpuCores">-</span>
+          </div>
+          <div class="metric-value" id="cpuUsage">0%</div>
+          <div class="progress-track"><div class="progress-bar" id="cpuBar"></div></div>
+          <p class="metric-detail" id="cpuModel">Dang tai thong tin CPU...</p>
+        </article>
+
+        <article class="metric-card accent-ram">
+          <div class="card-header">
+            <h2>RAM</h2>
+            <span id="ramPercent">0%</span>
+          </div>
+          <div class="metric-value" id="ramUsage">0 GB / 0 GB</div>
+          <div class="progress-track"><div class="progress-bar" id="ramBar"></div></div>
+          <p class="metric-detail">Bo nho dang su dung tren he thong</p>
+        </article>
+
+        <article class="metric-card accent-download">
+          <div class="card-header">
+            <h2>Download</h2>
+            <span>RX</span>
+          </div>
+          <div class="metric-value" id="downloadSpeed">0 Mbps</div>
+          <p class="metric-detail" id="downloadTotal">Tong nhan: 0 B</p>
+        </article>
+
+        <article class="metric-card accent-upload">
+          <div class="card-header">
+            <h2>Upload</h2>
+            <span>TX</span>
+          </div>
+          <div class="metric-value" id="uploadSpeed">0 Mbps</div>
+          <p class="metric-detail" id="uploadTotal">Tong gui: 0 B</p>
+        </article>
+      </section>
+
+      <section class="storage-panel">
+        <div class="storage-header">
+          <h2>Dung luong o cung</h2>
+          <p>Theo doi tung phan vung hoac mount point tren NAS/VPS</p>
+        </div>
+        <div id="diskList" class="disk-list">
+          <p class="metric-detail">Dang tai thong tin o cung...</p>
+        </div>
+      </section>
+
+      <section class="footer-panel">
+        <div>
+          <h3>Trang thai ket noi</h3>
+          <p id="interfaces">Dang tai giao dien mang...</p>
+        </div>
+        <div>
+          <h3>Chu ky cap nhat</h3>
+          <p>Moi 2 giay</p>
+        </div>
+        <div>
+          <h3>Uptime</h3>
+          <p id="uptime">Dang tai...</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+  </html>
